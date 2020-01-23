@@ -1,4 +1,5 @@
 import React from "react";
+import RealTidsInfo from "./realtidsinformation4";
 
 class ApiFetch extends React.Component {
   state = { locationData: {}, Name: "", SiteId: "", X: "", Y: "" };
@@ -8,7 +9,7 @@ class ApiFetch extends React.Component {
     const maxResults = "1";
     const proxy = "https://cors-anywhere.herokuapp.com/";
     const fake = "slussen";
-    const format = "json"
+    const format = "json";
     const api_call = await fetch(
       `${proxy}https://api.sl.se/api2/typeahead.${format}?key=${key}&searchstring=${fake}&stationsonly=${station}&maxresults=${maxResults}`
     );
@@ -36,10 +37,22 @@ class ApiFetch extends React.Component {
   render() {
     return (
       <div>
-        <h1>Plats: <br />{this.state.Name}</h1>
-        <h1>SiteID: <br />{this.state.SiteId}</h1>
-        <h1>Long: <br />{this.state.X}</h1>
-        <h1>Lat: <br />{this.state.Y}</h1>
+        <h1>
+          Plats: <br />
+          {this.state.Name}
+        </h1>
+        <h1>
+          SiteID: <br />
+          {this.state.SiteId}
+        </h1>
+        <h1>
+          Long: <br />
+          {this.state.X}
+        </h1>
+        <h1>
+          Lat: <br />
+          {this.state.Y}
+        </h1>
       </div>
     );
   }
